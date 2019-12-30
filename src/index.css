@@ -11,3 +11,22 @@ code {
    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
       monospace;
 }
+
+.container {
+   position: relative;
+   text-align: center;
+   color: white;
+}
+
+.coverText {
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   color: white;
+   font-size: 35px;
+}
+
+img {
+   width: 50%;
+}
