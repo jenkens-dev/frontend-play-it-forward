@@ -10,6 +10,7 @@ import UserContainer from './components/UserContainer';
 import EventContainer from './components/EventContainer';
 import SignUp from './components/SignUp';
 import NewEvent from './components/NewEvent';
+import Event from './components/Event';
 import './App.css';
 
 function App() {
@@ -32,7 +33,7 @@ function App() {
                path="/organizations/:id"
                render={() => <OrganizationContainer />}
             />
-            <Route exact path="/events" component={EventContainer} />
+            <Route exact path="/events" component={Event} />
             <Route exact path="/events/new" component={NewEvent} />
             <Route exact path="/events/:id" render={() => <EventContainer />} />
             <Footer />
