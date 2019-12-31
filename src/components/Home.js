@@ -1,7 +1,6 @@
 import React from 'react';
 import coverphoto from '../perry-grone-lbLgFFlADrY-unsplash.jpg';
 import EventContainer from './EventContainer';
-import Footer from './Footer';
 
 class Home extends React.Component {
    constructor() {
@@ -29,7 +28,6 @@ class Home extends React.Component {
             <div className="coverText">Play It Forward</div>
             <h2>Upcoming Events</h2>
             <EventContainer events={this.state.events} />
-            <Footer />
          </div>
       );
    }

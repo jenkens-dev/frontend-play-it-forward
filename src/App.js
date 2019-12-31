@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import Home from './components/Home';
 import About from './components/About';
 import NavBar from './components/NavBar';
+import Footer from './components/Footer';
 import OrganizationContainer from './components/OrganizationContainer';
 import './App.css';
 
@@ -16,8 +17,9 @@ function App() {
             <Route
                exact
                path="/organizations/:id"
-               render={() => <OrganizationContainer/>}
+               render={() => <OrganizationContainer />}
             />
+            <Footer />
          </div>
       </Router>
    );
