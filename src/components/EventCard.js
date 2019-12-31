@@ -13,5 +13,4 @@ const EventCard = ({ event: { title, location, description } }) => {
    );
 };
 
-//testing
 export default EventCard;
