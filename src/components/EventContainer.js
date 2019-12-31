@@ -1,0 +1,13 @@
+import React from 'react';
+import Event from './EventCard';
+
+const EventContainer = props => {
+   const createEventCards = () => {
+      return props.events.map(event => {
+         return <Event key={event.id} event={event} />;
+      });
+   };
+   return <div>{createEventCards()}</div>;
+};
+
+export default EventContainer;
