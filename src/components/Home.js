@@ -9,16 +9,6 @@ class Home extends React.Component {
          events: [],
       };
    }
-
-   componentDidMount() {
-      fetch('http://localhost:3000/events')
-         .then(resp => resp.json())
-         .then(data => {
-            this.setState({
-               events: data,
-            });
-         });
-   }
    render() {
       return (
          <div>
@@ -27,7 +17,7 @@ class Home extends React.Component {
             </div>
             <div className="coverText">Play It Forward</div>
             <h2>Upcoming Events</h2>
-            <EventContainer events={this.state.events} />
+            <EventContainer />
          </div>
       );
    }

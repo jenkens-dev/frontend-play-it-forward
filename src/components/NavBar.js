@@ -13,30 +13,30 @@ export default class MenuExampleSecondary extends Component {
 
       return (
          <Menu stackable>
-            <Link to="/">
-               <Menu.Item
-                  name="home"
-                  active={activeItem === 'home'}
-                  onClick={this.handleItemClick}
-               >
-                  <img src={logo} />
-               </Menu.Item>
-            </Link>
-            <Link to="/events">
-               <Menu.Item
-                  name="events"
-                  active={activeItem === 'events'}
-                  onClick={this.handleItemClick}
-               />
-            </Link>
+            <Menu.Item
+               name="home"
+               active={activeItem === 'home'}
+               onClick={this.handleItemClick}
+               as={Link}
+               to="/"
+            >
+               <img src={logo} />
+            </Menu.Item>
+            <Menu.Item
+               name="events"
+               active={activeItem === 'events'}
+               onClick={this.handleItemClick}
+               as={Link}
+               to="/events"
+            />
             <Menu.Menu position="right">
-               <Link to="/login">
-                  <Menu.Item
-                     name="login"
-                     active={activeItem === 'login'}
-                     onClick={this.handleItemClick}
-                  />
-               </Link>
+               <Menu.Item
+                  name="login"
+                  active={activeItem === 'login'}
+                  onClick={this.handleItemClick}
+                  as={Link}
+                  to="/login"
+               />
             </Menu.Menu>
          </Menu>
       );
