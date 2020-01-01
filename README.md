@@ -11,7 +11,7 @@ PlayItForward was an idea me and my fellow Flatiron classmates came up with for 
 ## Screenshots
 
 Ninja Mock Wireframing
-<img src="https://imgur.com/a/nHYk09z" width="800">
+<img src="https://imgur.com/5JR7TtA" width="800">
 
 Home page version 1
 <img src="https://imgur.com/qUAjxYl" width="800">
