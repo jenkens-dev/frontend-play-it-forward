@@ -16,17 +16,48 @@ import './App.css';
 class App extends React.Component {
    constructor() {
       super();
-      this.state = {};
+      this.state = {
+         isLoggedIn: false,
+         currentUser: '',
+      };
    }
+
+   login = user => {
+      this.setState({
+         isLoggedIn: true,
+         currentUser: user,
+      });
+   };
+
    render() {
       return (
          <Router>
             <div>
-               <NavBar />
+               <NavBar isLoggedIn={this.state.isLoggedIn} />
                <Route exact path="/" component={Home} />
                <Route exact path="/about" component={About} />
-               <Route exact path="/login" component={Login} />
-               <Route exact path="/signup" component={SignUp} />
+               <Route
+                  exact
+                  path="/login"
+                  render={() => (
+                     <Login
+                        onLogin={this.login}
+                        currentUser={this.state.currentUser}
+                        isLoggedIn={this.state.isLoggedIn}
+                     />
+                  )}
+               />
+               <Route
+                  exact
+                  path="/signup"
+                  render={() => (
+                     <SignUp
+                        onLogin={this.login}
+                        currentUser={this.state.currentUser}
+                        isLoggedIn={this.state.isLoggedIn}
+                     />
+                  )}
+               />
                <Route
                   exact
                   path="/users/:id"

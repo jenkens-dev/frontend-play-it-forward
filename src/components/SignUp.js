@@ -1,10 +1,11 @@
 import React from 'react';
 // import { Redirect } from 'react-router-dom';
 import { Button, Radio, Form } from 'semantic-ui-react';
+import { Redirect } from 'react-router-dom';
 
 class SignUp extends React.Component {
-   constructor() {
-      super();
+   constructor(props) {
+      super(props);
       this.state = {
          username: '',
       };
@@ -19,7 +20,6 @@ class SignUp extends React.Component {
    handleChange = (e, { value }) => this.setState({ value });
 
    handleSubmit = e => {
-      console.log(this.state);
       e.preventDefault();
       fetch(`http://localhost:3000/${this.state.value}`, {
          method: 'POST',
@@ -31,11 +31,14 @@ class SignUp extends React.Component {
          }),
       })
          .then(resp => resp.json())
-         .then(json => console.log(json))
+         .then(json => this.props.onLogin(json))
          .catch(err => console.log('Invalid Username'));
    };
 
    render() {
+      if (this.props.isLoggedIn) {
+         return <Redirect to="/" />;
+      }
       return (
          <div>
             <h1>Sign Up</h1>

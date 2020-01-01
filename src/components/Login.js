@@ -1,10 +1,10 @@
 import React from 'react';
 import { Button, Radio, Form } from 'semantic-ui-react';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 
 class Login extends React.Component {
-   constructor() {
-      super();
+   constructor(props) {
+      super(props);
       this.state = {
          username: '',
       };
@@ -20,9 +20,25 @@ class Login extends React.Component {
 
    handleSubmit = e => {
       e.preventDefault();
+      console.log(this.state.value);
+      fetch(`http://localhost:3000/${this.state.value}s-login`, {
+         method: 'POST',
+         headers: {
+            'Content-Type': 'application/json',
+         },
+         body: JSON.stringify({
+            username: `${this.state.username}`,
+         }),
+      })
+         .then(resp => resp.json())
+         .then(json => this.props.onLogin(json))
+         .catch(err => console.log('Invalid Username'));
    };
 
    render() {
+      if (this.props.isLoggedIn) {
+         return <Redirect to="/" />;
+      }
       return (
          <div>
             <h1>Login</h1>
