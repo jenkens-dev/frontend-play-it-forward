@@ -13,33 +13,47 @@ import NewEvent from './components/NewEvent';
 import Event from './components/Event';
 import './App.css';
 
-function App() {
-   return (
-      <Router>
-         <div>
-            <NavBar />
-            <Route exact path="/" component={Home} />
-            <Route exact path="/about" component={About} />
-            <Route exact path="/login" component={Login} />
-            <Route exact path="/signup" component={SignUp} />
-            <Route exact path="/users/:id" render={() => <UserContainer />} />
-            <Route
-               exact
-               path="/organizations"
-               component={OrganizationContainer}
-            />
-            <Route
-               exact
-               path="/organizations/:id"
-               render={() => <OrganizationContainer />}
-            />
-            <Route exact path="/events" component={Event} />
-            <Route exact path="/events/new" component={NewEvent} />
-            <Route exact path="/events/:id" render={() => <EventContainer />} />
-            <Footer />
-         </div>
-      </Router>
-   );
+class App extends React.Component {
+   constructor() {
+      super();
+      this.state = {};
+   }
+   render() {
+      return (
+         <Router>
+            <div>
+               <NavBar />
+               <Route exact path="/" component={Home} />
+               <Route exact path="/about" component={About} />
+               <Route exact path="/login" component={Login} />
+               <Route exact path="/signup" component={SignUp} />
+               <Route
+                  exact
+                  path="/users/:id"
+                  render={() => <UserContainer />}
+               />
+               <Route
+                  exact
+                  path="/organizations"
+                  component={OrganizationContainer}
+               />
+               <Route
+                  exact
+                  path="/organizations/:id"
+                  render={() => <OrganizationContainer />}
+               />
+               <Route exact path="/events" component={Event} />
+               <Route exact path="/events/new" component={NewEvent} />
+               <Route
+                  exact
+                  path="/events/:id"
+                  render={() => <EventContainer />}
+               />
+               <Footer />
+            </div>
+         </Router>
+      );
+   }
 }
 
 export default App;
