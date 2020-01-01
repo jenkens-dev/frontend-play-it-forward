@@ -13,12 +13,17 @@ const Footer = () => (
             <a
                target="_blank"
                href="https://github.com/Taljjaa/frontend-play-it-forward"
+               rel="noopener noreferrer"
             >
                <Icon name="github" />
             </a>
          </Menu.Item>
          <Menu.Item>
-            <a target="_blank" href="https://twitter.com/Talliaa_">
+            <a
+               target="_blank"
+               href="https://twitter.com/Talliaa_"
+               rel="noopener noreferrer"
+            >
                <Icon name="twitter" />
             </a>
          </Menu.Item>

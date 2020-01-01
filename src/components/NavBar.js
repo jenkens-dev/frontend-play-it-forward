@@ -20,7 +20,7 @@ export default class MenuExampleSecondary extends Component {
                as={Link}
                to="/"
             >
-               <img src={logo} />
+               <img src={logo} alt="PlayItForward logo" />
             </Menu.Item>
             <Menu.Item
                name="events"

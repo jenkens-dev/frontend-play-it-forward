@@ -1,7 +1,6 @@
 import React from 'react';
 import EventContainer from './EventContainer';
-import { Icon, Input } from 'semantic-ui-react';
-import { Link } from 'react-router-dom';
+import { Input } from 'semantic-ui-react';
 
 class Event extends React.Component {
    constructor() {
