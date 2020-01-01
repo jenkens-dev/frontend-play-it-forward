@@ -22,10 +22,10 @@ class App extends React.Component {
       };
    }
 
-   login = volunteer => {
+   login = user => {
       this.setState({
          isLoggedIn: true,
-         currentUser: volunteer,
+         currentUser: user,
       });
    };
 

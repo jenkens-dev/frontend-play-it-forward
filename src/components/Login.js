@@ -1,10 +1,10 @@
 import React from 'react';
 import { Button, Radio, Form } from 'semantic-ui-react';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 
 class Login extends React.Component {
-   constructor() {
-      super();
+   constructor(props) {
+      super(props);
       this.state = {
          username: '',
       };
@@ -23,6 +23,9 @@ class Login extends React.Component {
    };
 
    render() {
+      if (this.props.isLoggedIn) {
+         return <Redirect to="/" />;
+      }
       return (
          <div>
             <h1>Login</h1>

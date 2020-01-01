@@ -20,7 +20,6 @@ class SignUp extends React.Component {
    handleChange = (e, { value }) => this.setState({ value });
 
    handleSubmit = e => {
-      console.log(this.state);
       e.preventDefault();
       fetch(`http://localhost:3000/${this.state.value}`, {
          method: 'POST',
