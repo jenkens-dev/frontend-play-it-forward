@@ -11,6 +11,7 @@ import EventContainer from './components/EventContainer';
 import SignUp from './components/SignUp';
 import NewEvent from './components/NewEvent';
 import Event from './components/Event';
+import OrganizationCard from './components/OrganizationCard';
 import './App.css';
 
 class App extends React.Component {
@@ -71,7 +72,7 @@ class App extends React.Component {
                <Route
                   exact
                   path="/organizations/:id"
-                  render={() => <OrganizationContainer />}
+                  render={routerProps => <OrganizationCard {...routerProps} />}
                />
                <Route exact path="/events" component={Event} />
                <Route exact path="/events/new" component={NewEvent} />

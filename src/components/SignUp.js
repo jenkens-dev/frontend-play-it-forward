@@ -31,7 +31,10 @@ class SignUp extends React.Component {
          }),
       })
          .then(resp => resp.json())
-         .then(json => this.props.onLogin(json))
+         .then(json => {
+            this.props.onLogin(json);
+            console.log(json);
+         })
          .catch(err => console.log('Invalid Username'));
    };
 
