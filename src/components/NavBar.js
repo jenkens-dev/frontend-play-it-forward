@@ -29,6 +29,13 @@ export default class MenuExampleSecondary extends Component {
                as={Link}
                to="/events"
             />
+            <Menu.Item
+               name="organizations"
+               active={activeItem === 'organizations'}
+               onClick={this.handleItemClick}
+               as={Link}
+               to="/organizations"
+            />
             <Menu.Menu position="right">
                <Menu.Item
                   name="login"
