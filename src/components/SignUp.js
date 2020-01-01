@@ -29,40 +29,46 @@ class SignUp extends React.Component {
          body: JSON.stringify({
             username: `${this.state.username}`,
          }),
-      }).then(console.log('home'));
+      })
+         .then(resp => resp.json())
+         .then(json => console.log(json))
+         .catch(err => console.log('Invalid Username'));
    };
 
    render() {
       return (
-         <Form onSubmit={this.handleSubmit}>
-            <Form.Field>
-               <Radio
-                  label="Volunteer"
-                  name="radioGroup"
-                  value="volunteers"
-                  checked={this.state.value === 'volunteers'}
-                  onChange={this.handleChange}
-               />
-            </Form.Field>
-            <Form.Field>
-               <Radio
-                  label="Organization"
-                  name="radioGroup"
-                  value="organizations"
-                  checked={this.state.value === 'organizations'}
-                  onChange={this.handleChange}
-               />
-            </Form.Field>
-            <Form.Field>
-               <label>Username</label>
-               <input
-                  placeholder="Username"
-                  value={this.state.username}
-                  onChange={this.handleUsernameChange}
-               />
-            </Form.Field>
-            <Button type="submit">Submit</Button>
-         </Form>
+         <div>
+            <h1>Sign Up</h1>
+            <Form onSubmit={this.handleSubmit}>
+               <Form.Field>
+                  <Radio
+                     label="Volunteer"
+                     name="radioGroup"
+                     value="volunteers"
+                     checked={this.state.value === 'volunteers'}
+                     onChange={this.handleChange}
+                  />
+               </Form.Field>
+               <Form.Field>
+                  <Radio
+                     label="Organization"
+                     name="radioGroup"
+                     value="organizations"
+                     checked={this.state.value === 'organizations'}
+                     onChange={this.handleChange}
+                  />
+               </Form.Field>
+               <Form.Field>
+                  <label>Username</label>
+                  <input
+                     placeholder="Username"
+                     value={this.state.username}
+                     onChange={this.handleUsernameChange}
+                  />
+               </Form.Field>
+               <Button type="submit">Submit</Button>
+            </Form>
+         </div>
       );
    }
 }
