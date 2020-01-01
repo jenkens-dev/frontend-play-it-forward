@@ -1,5 +1,5 @@
 import React from 'react';
-import { Redirect } from 'react-router-dom';
+// import { Redirect } from 'react-router-dom';
 import { Button, Radio, Form } from 'semantic-ui-react';
 
 class SignUp extends React.Component {
@@ -29,8 +29,7 @@ class SignUp extends React.Component {
          body: JSON.stringify({
             username: `${this.state.username}`,
          }),
-      })
-         .then(console.log("home"))
+      }).then(console.log('home'));
    };
 
    render() {
