@@ -24,7 +24,7 @@ class EventDetails extends React.Component {
    };
 
    attendEvent = () => {
-      fetch(`http://localhost:3000/events/${this.props.match.params.id}`), {};
+      //   fetch(`http://localhost:3000/events/${this.props.match.params.id}`), {};
    };
 
    render() {
