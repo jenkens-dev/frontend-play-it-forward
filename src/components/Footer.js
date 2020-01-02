@@ -5,7 +5,7 @@ import { Icon } from 'semantic-ui-react';
 
 const Footer = () => (
    <div>
-      <Menu inverted fixed="bottom">
+      <Menu inverted>
          <Link to="/about">
             <Menu.Item>About</Menu.Item>
          </Link>

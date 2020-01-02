@@ -1,5 +1,5 @@
 import React from 'react';
-import Event from './EventCard';
+import EventCard from './EventCard';
 
 // const EventContainer = props => {
 //    const createEventCards = () => {
@@ -29,7 +29,7 @@ class EventContainer extends React.Component {
 
    createEventCards = () => {
       return this.state.events.map(event => {
-         return <Event key={event.id} event={event} />;
+         return <EventCard key={event.id} event={event} />;
       });
    };
    render() {
