@@ -22,6 +22,11 @@ class EventDetails extends React.Component {
          event: eventJson,
       });
    };
+
+   attendEvent = () => {
+      fetch(`http://localhost:3000/events/${this.props.match.params.id}`), {};
+   };
+
    render() {
       return (
          <div>
@@ -41,7 +46,11 @@ class EventDetails extends React.Component {
                <Segment>{this.state.event.location}</Segment>
                <Segment>{this.state.event.description}</Segment>
                <Segment>{`${this.state.event.volunteers.length} Attending`}</Segment>
-               {this.props.isLoggedIn ? <Button>Attend</Button> : <span></span>}
+               {this.props.isLoggedIn ? (
+                  <Button onClick={this.attendEvent}>Attend</Button>
+               ) : (
+                  <span></span>
+               )}
             </Segment.Group>
          </div>
       );
