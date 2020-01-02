@@ -12,6 +12,7 @@ import SignUp from './components/SignUp';
 import NewEvent from './components/NewEvent';
 import Event from './components/Event';
 import OrganizationCard from './components/OrganizationCard';
+import EventDetail from './components/EventDetail';
 import './App.css';
 
 class App extends React.Component {
@@ -24,6 +25,7 @@ class App extends React.Component {
    }
 
    login = user => {
+      console.log('Logging In', user);
       this.setState({
          isLoggedIn: true,
          currentUser: user,
@@ -79,7 +81,13 @@ class App extends React.Component {
                <Route
                   exact
                   path="/events/:id"
-                  render={() => <EventContainer />}
+                  render={routerProps => (
+                     <EventDetail
+                        {...routerProps}
+                        currentUser={this.state.currentUser}
+                        isLoggedIn={this.state.isLoggedIn}
+                     />
+                  )}
                />
                <Footer />
             </div>
