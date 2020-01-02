@@ -13,6 +13,7 @@ import NewEvent from './components/NewEvent';
 import Event from './components/Event';
 import OrganizationCard from './components/OrganizationCard';
 import EventDetail from './components/EventDetail';
+import EditVolunteer from './components/EditVolunteer';
 import './App.css';
 
 class App extends React.Component {
@@ -94,6 +95,16 @@ class App extends React.Component {
                   render={routerProps => <OrganizationCard {...routerProps} />}
                />
                <Route exact path="/events" component={Event} />
+               <Route
+                  exact
+                  path="/volunteer/edit"
+                  render={routerProps => (
+                     <EditVolunteer
+                        {...routerProps}
+                        currentUser={this.state.currentUser}
+                     />
+                  )}
+               />
                <Route exact path="/events/new" component={NewEvent} />
                <Route
                   exact

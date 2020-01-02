@@ -1,5 +1,6 @@
 import React from 'react';
 import { Button } from 'semantic-ui-react';
+import { Link } from 'react-router-dom';
 
 const User = props => {
    console.log(props);
@@ -15,10 +16,11 @@ const User = props => {
          });
    };
 
-
    return (
       <div>
-         <Button>Edit Profile</Button>
+         <Link to="/volunteer/edit">
+            <Button>Edit Profile</Button>
+         </Link>
          <Button onClick={deleteVol}>Delete Profile</Button>
          <h2>{props.user.display_name}</h2>
          <p>{props.user.bio}</p>
