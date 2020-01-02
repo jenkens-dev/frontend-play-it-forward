@@ -10,7 +10,6 @@ export default class NotLoggedInNav extends Component {
 
    render() {
       const { activeItem } = this.state;
-
       return (
          <Menu stackable>
             <Menu.Item
@@ -38,6 +37,8 @@ export default class NotLoggedInNav extends Component {
             />
             <Menu.Menu position="right">
                <Menu.Item
+                  as={Link}
+                  to={`/users/${this.props.currentUser.id}`}
                   name="user"
                   active={activeItem === 'user'}
                   onClick={this.handleItemClick}

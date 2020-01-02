@@ -13,6 +13,7 @@ import NewEvent from './components/NewEvent';
 import Event from './components/Event';
 import OrganizationCard from './components/OrganizationCard';
 import EventDetail from './components/EventDetail';
+import EditVolunteer from './components/EditVolunteer';
 import './App.css';
 
 class App extends React.Component {
@@ -32,11 +33,22 @@ class App extends React.Component {
       });
    };
 
+   logout = () => {
+      console.log('logging out');
+      this.setState({
+         isLoggedIn: false,
+         currentUser: '',
+      });
+   };
+
    render() {
       return (
          <Router>
             <div>
-               <NavBar isLoggedIn={this.state.isLoggedIn} />
+               <NavBar
+                  isLoggedIn={this.state.isLoggedIn}
+                  currentUser={this.state.currentUser}
+               />
                <Route exact path="/" component={Home} />
                <Route exact path="/about" component={About} />
                <Route
@@ -63,8 +75,14 @@ class App extends React.Component {
                />
                <Route
                   exact
-                  path="/users/:id"
-                  render={() => <UserContainer />}
+                  path="/users/:user_id"
+                  render={routerProps => (
+                     <UserContainer
+                        {...routerProps}
+                        onLogout={this.logout}
+                        isLoggedIn={this.state.isLoggedIn}
+                     />
+                  )}
                />
                <Route
                   exact
@@ -77,6 +95,16 @@ class App extends React.Component {
                   render={routerProps => <OrganizationCard {...routerProps} />}
                />
                <Route exact path="/events" component={Event} />
+               <Route
+                  exact
+                  path="/volunteer/edit"
+                  render={routerProps => (
+                     <EditVolunteer
+                        {...routerProps}
+                        currentUser={this.state.currentUser}
+                     />
+                  )}
+               />
                <Route exact path="/events/new" component={NewEvent} />
                <Route
                   exact
