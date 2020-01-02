@@ -1,15 +1,6 @@
 import React from 'react';
 import EventCard from './EventCard';
 
-// const EventContainer = props => {
-//    const createEventCards = () => {
-//       return props.events.map(event => {
-//          return <Event key={event.id} event={event} />;
-//       });
-//    };
-//    return <div>{createEventCards()}</div>;
-// };
-
 class EventContainer extends React.Component {
    constructor() {
       super();
@@ -33,7 +24,12 @@ class EventContainer extends React.Component {
       });
    };
    render() {
-      return <div>{this.createEventCards()}</div>;
+      return (
+         <div>
+            <h1>Events</h1>
+            {this.createEventCards()}
+         </div>
+      );
    }
 }
 

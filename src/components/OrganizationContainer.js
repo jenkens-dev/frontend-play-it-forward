@@ -25,7 +25,12 @@ class OrganizationContainer extends React.Component {
       });
    };
    render() {
-      return <div>{this.createOrgCards()}</div>;
+      return (
+         <div>
+            <h1>Organizations</h1>
+            {this.createOrgCards()}
+         </div>
+      );
    }
 }
 

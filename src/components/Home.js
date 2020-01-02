@@ -16,7 +16,6 @@ class Home extends React.Component {
                <img src={coverphoto} alt="group of people huddling" />
             </div>
             <div className="coverText">Play It Forward</div>
-            <h2>Upcoming Events</h2>
             <EventContainer />
          </div>
       );
