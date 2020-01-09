@@ -14,7 +14,7 @@ Ninja Mock Wireframing
 <img src="https://imgur.com/5JR7TtA" width="800">
 
 Home page version 1
-<img src="https://imgur.com/qUAjxYl" width="800">
+<img src="https://i.imgur.com/qUAjxYl.jpg" width="800">
 
 ## Technology Used
 
