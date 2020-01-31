@@ -11,10 +11,10 @@ PlayItForward was an idea me and my fellow Flatiron classmates came up with for 
 ## Screenshots
 
 Ninja Mock Wireframing
-<img src="https://imgur.com/5JR7TtA" width="800">
+<img src="https://i.imgur.com/5JR7TtA.png" width="800">
 
 Home page version 1
-<img src="https://imgur.com/qUAjxYl" width="800">
+<img src="https://i.imgur.com/qUAjxYl.jpg" width="800">
 
 ## Technology Used
 
