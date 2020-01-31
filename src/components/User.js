@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 
 const User = props => {
    console.log(props);
-   console.log(props.user.id);
 
    const deleteVol = () => {
       fetch(`http://localhost:3000/volunteers/${props.user.id}`, {
@@ -23,6 +22,7 @@ const User = props => {
          </Link>
          <Button onClick={deleteVol}>Delete Profile</Button>
          <h2>{props.user.display_name}</h2>
+         <img src={props.user.image} />
          <p>{props.user.bio}</p>
          <p>Experience: {props.user.points}</p>
       </div>

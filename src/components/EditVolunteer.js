@@ -1,49 +1,36 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { useHistory } from 'react-router-dom';
 
-class EditVolunteer extends React.Component {
-   constructor(props) {
-      super(props);
-      this.state = {
-         bio: '',
-      };
-   }
+const EditVolunteer = ({ currentUser }) => {
+  const [bio, setBio] = useState('');
+  const history = useHistory();
 
-   handleChange = e => {
-      this.setState({
-         bio: e.target.value,
-      });
-   };
+  const handleChange = e => {
+    setBio(e.target.value);
+  };
 
-   handleSubmit = e => {
-      e.preventDefault();
-      fetch(`http://localhost:3000/volunteers/${this.props.currentUser.id}`, {
-         method: 'PATCH',
-         headers: {
-            'Content-Type': 'application/json',
-         },
-         body: JSON.stringify({
-            bio: this.state.bio,
-         }),
-      })
-         .then(resp => resp.json())
-         .then(json => console.log(json));
-   };
+  const handleSubmit = e => {
+    e.preventDefault();
+    fetch(`http://localhost:3000/volunteers/${currentUser.id}`, {
+      method: 'PATCH',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        bio,
+      }),
+    }).then(() => history.push(`/users/${currentUser.id}`));
+  };
 
-   render() {
-      return (
-         <form onSubmit={this.handleSubmit}>
-            <label>
-               Bio:
-               <input
-                  type="text"
-                  value={this.state.bio}
-                  onChange={this.handleChange}
-               />
-            </label>
-            <input type="submit" value="Submit" />
-         </form>
-      );
-   }
-}
+  return (
+    <form onSubmit={handleSubmit}>
+      <label>
+        Bio:
+        <input type="text" value={bio} onChange={handleChange} />
+      </label>
+      <input type="submit" value="Submit" />
+    </form>
+  );
+};
 
 export default EditVolunteer;

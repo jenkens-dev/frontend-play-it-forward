@@ -1,6 +1,6 @@
 import React from 'react';
 import coverphoto from '../perry-grone-lbLgFFlADrY-unsplash.jpg';
-import EventContainer from './EventContainer';
+import EventContainer from './Events/EventContainer';
 
 class Home extends React.Component {
    constructor() {
